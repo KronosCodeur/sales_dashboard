@@ -33,7 +33,7 @@ class PieChart2State extends State {
           show: false,
         ),
         sectionsSpace: 0,
-        centerSpaceRadius: 30,
+        centerSpaceRadius: 25,
         sections: showingSections(),
       ),
     );

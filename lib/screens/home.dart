@@ -5,6 +5,7 @@ import 'package:sales_dashboard/widgets/calendar_widget.dart';
 import 'package:sales_dashboard/widgets/camanbert_model.dart';
 import 'package:sales_dashboard/widgets/day_data_model.dart';
 import 'package:sales_dashboard/widgets/month_sales_stats.dart';
+import 'package:sales_dashboard/widgets/visitors_progress_bar.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -346,8 +347,11 @@ class _HomeState extends State<Home> {
                             ),
                             const Gap(40),
                             Container(
-                              width: 300,
+                              width: 281,
+                              alignment: Alignment.center,
                               height: 296,
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 10, vertical: 10),
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(20),
                                 color: const Color(0xff161717),
@@ -1146,7 +1150,7 @@ class _HomeState extends State<Home> {
                     elevation: 10,
                     borderRadius: BorderRadius.circular(20),
                     child: Container(
-                      width: 320,
+                      width: 307,
                       height: 808,
                       padding: const EdgeInsets.symmetric(
                           horizontal: 20, vertical: 20),
@@ -1187,12 +1191,12 @@ class _HomeState extends State<Home> {
                           Gap(40),
                           Container(
                             child: Row(children: [
-                              Gap(30),
+                              Gap(20),
                               Container(
                                   width: 120,
                                   height: 120,
                                   child: SocialNetworkStatsWidget()),
-                              const Gap(40),
+                              const Gap(30),
                               Column(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
@@ -1316,16 +1320,16 @@ class _HomeState extends State<Home> {
                                   Text("Total Intake",
                                       style: GoogleFonts.poppins(
                                           color: Colors.white,
-                                          fontSize: 10,
+                                          fontSize: 11,
                                           fontWeight: FontWeight.w400)),
                                   const Gap(30),
                                   Text("1500k",
                                       style: GoogleFonts.poppins(
                                           color: Colors.white,
-                                          fontSize: 10,
+                                          fontSize: 11,
                                           fontWeight: FontWeight.w400)),
                                 ]),
-                            const Gap(10),
+                            const Gap(11),
                             Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
@@ -1333,7 +1337,7 @@ class _HomeState extends State<Home> {
                                   Text("New Customers",
                                       style: GoogleFonts.poppins(
                                           color: Colors.white,
-                                          fontSize: 10,
+                                          fontSize: 11,
                                           fontWeight: FontWeight.w400)),
                                   const Gap(30),
                                   Row(
@@ -1343,7 +1347,7 @@ class _HomeState extends State<Home> {
                                               color: Colors.white,
                                               fontSize: 10,
                                               fontWeight: FontWeight.w400)),
-                                      const Gap(10),
+                                      const Gap(11),
                                       Text("+1k",
                                           style: GoogleFonts.poppins(
                                               color: const Color(0xff21bb85),
@@ -1352,7 +1356,7 @@ class _HomeState extends State<Home> {
                                     ],
                                   ),
                                 ]),
-                            const Gap(10),
+                            const Gap(11),
                             Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
@@ -1360,13 +1364,13 @@ class _HomeState extends State<Home> {
                                   Text("Repeat Customers",
                                       style: GoogleFonts.poppins(
                                           color: Colors.white,
-                                          fontSize: 10,
+                                          fontSize: 11,
                                           fontWeight: FontWeight.w400)),
                                   const Gap(30),
                                   Text("1.5k",
                                       style: GoogleFonts.poppins(
                                           color: Colors.white,
-                                          fontSize: 10,
+                                          fontSize: 11,
                                           fontWeight: FontWeight.w400)),
                                 ]),
                             const Gap(10),
@@ -1377,13 +1381,13 @@ class _HomeState extends State<Home> {
                                   Text("Total Revenue",
                                       style: GoogleFonts.poppins(
                                           color: Colors.white,
-                                          fontSize: 10,
+                                          fontSize: 11,
                                           fontWeight: FontWeight.w400)),
                                   const Gap(30),
                                   Text("130k",
                                       style: GoogleFonts.poppins(
                                           color: Colors.white,
-                                          fontSize: 10,
+                                          fontSize: 11,
                                           fontWeight: FontWeight.w400)),
                                 ]),
                           ]),
@@ -1399,26 +1403,35 @@ class _HomeState extends State<Home> {
                                 Text("Online visitors",
                                     style: GoogleFonts.poppins(
                                         color: Colors.white,
-                                        fontSize: 11,
+                                        fontSize: 13,
                                         fontWeight: FontWeight.w400)),
                                 Gap(5),
                                 Text("20k",
                                     style: GoogleFonts.poppins(
                                         color: Colors.white,
-                                        fontSize: 22,
+                                        fontSize: 25,
                                         fontWeight: FontWeight.w600)),
-                                Gap(30),
+                                Gap(5),
+                                VisitorProgressBar(
+                                  progressValue: 0.7,
+                                ),
+                                Gap(35),
                                 Text("Offline visitors",
                                     style: GoogleFonts.poppins(
                                         color: Colors.white,
-                                        fontSize: 11,
+                                        fontSize: 13,
                                         fontWeight: FontWeight.w400)),
                                 Gap(5),
                                 Text("7k",
                                     style: GoogleFonts.poppins(
                                         color: Colors.white,
-                                        fontSize: 22,
-                                        fontWeight: FontWeight.w600))
+                                        fontSize: 25,
+                                        fontWeight: FontWeight.w600)),
+                                Gap(5),
+                                VisitorProgressBar(
+                                  progressValue: 0.5,
+                                ),
+                                Gap(5),
                               ],
                             ),
                           ),
