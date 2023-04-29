@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sales_dashboard/widgets/calendar_widget.dart';
 import 'package:sales_dashboard/widgets/camanbert_model.dart';
 import 'package:sales_dashboard/widgets/day_data_model.dart';
+import 'package:sales_dashboard/widgets/month_sales_stats.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -232,21 +234,125 @@ class _HomeState extends State<Home> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Container(
+                              alignment: Alignment.center,
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 20, vertical: 20),
                               width: 625,
                               height: 296,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(20),
                                 color: const Color(0xff161717),
                               ),
+                              child: Column(
+                                children: [
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        "Sales",
+                                        style: GoogleFonts.poppins(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 15),
+                                      ),
+                                      Row(
+                                        children: [
+                                          Material(
+                                            elevation: 3,
+                                            borderRadius:
+                                                BorderRadius.circular(5),
+                                            shadowColor: Colors.white,
+                                            child: Container(
+                                              alignment: Alignment.center,
+                                              width: 100,
+                                              height: 34,
+                                              decoration: BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.circular(5),
+                                                color: const Color(0xff161717),
+                                              ),
+                                              child: Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceAround,
+                                                children: [
+                                                  const Icon(
+                                                    Icons
+                                                        .calendar_today_outlined,
+                                                    color: Colors.white,
+                                                    size: 20,
+                                                  ),
+                                                  Text(
+                                                    "2022",
+                                                    style: GoogleFonts.poppins(
+                                                        color: Colors.white,
+                                                        fontWeight:
+                                                            FontWeight.w600,
+                                                        fontSize: 13),
+                                                  ),
+                                                  const Icon(
+                                                    Icons
+                                                        .keyboard_arrow_down_rounded,
+                                                    color: Colors.white,
+                                                    size: 20,
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                          const Gap(20),
+                                          Container(
+                                            alignment: Alignment.center,
+                                            width: 103,
+                                            height: 34,
+                                            decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(5),
+                                              color: const Color(0xffFAD85D),
+                                            ),
+                                            child: Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                const Icon(
+                                                  Icons.file_download_outlined,
+                                                  color: Color(0xff161717),
+                                                  size: 20,
+                                                ),
+                                                Text(
+                                                  "Dowload",
+                                                  style: GoogleFonts.poppins(
+                                                      color: const Color(
+                                                          0xff161717),
+                                                      fontWeight:
+                                                          FontWeight.w600,
+                                                      fontSize: 13),
+                                                )
+                                              ],
+                                            ),
+                                          ),
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                  const Gap(20),
+                                  Container(
+                                      width: 550,
+                                      height: 200,
+                                      child: MonthSalesStatsWidget()),
+                                ],
+                              ),
                             ),
                             const Gap(40),
                             Container(
-                              width: 281,
+                              width: 300,
                               height: 296,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(20),
                                 color: const Color(0xff161717),
                               ),
+                              child: CalendarWidget(),
                             ),
                           ],
                         ),
@@ -262,7 +368,7 @@ class _HomeState extends State<Home> {
                               width: 283,
                               height: 248,
                               padding: EdgeInsets.symmetric(
-                                  vertical: 20, horizontal: 20),
+                                  vertical: 10, horizontal: 20),
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(20),
                                 color: const Color(0xff161717),
